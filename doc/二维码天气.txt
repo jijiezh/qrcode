@@ -1,0 +1,14 @@
+1.安装 python mysql
+2.安装环境依赖
+pip install image
+pip install pillow
+pip install qrcode
+
+pip install requests
+pip install apscheduler
+pip instlal flask
+pip install flask_cors
+pip install flask_apscheduler
+pip install gevent
+
+3.运行 python req_weather_info.py
