@@ -5,6 +5,7 @@ import json
 import math
 
 debug_mode = False
+base_url = 'D:/nginx/html/img/qrcode/'
 qr = qrcode.QRCode(version=10,
                    # 二维码的纠错功能
                    error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -27,7 +28,7 @@ def make_qrcode_img_no_section(qr_data):
     # 二维码的背景色和格子色
     img = qr.make_image(fill_color='black', back_color='white')
     file_name = hexdigits + '_' + section + '.png'
-    img.save(file_name)
+    img.save(base_url+file_name)
     if debug_mode:
         img.show()
     return [{"img_url": file_name, 'img_digits': hexdigits, 'img_content': generate_result}]
@@ -56,7 +57,7 @@ def make_qrcode_img(qr_data):
             # 二维码的背景色和格子色
             img = qr.make_image(fill_color='black', back_color='white')
             file_name = hexdigits + '_' + section + '.png'
-            img.save(file_name)
+            img.save(base_url+file_name)
             if debug_mode:
                 img.show()
             imgs.append({"img_url": file_name, 'img_digits': hexdigits, 'img_content': generate_result})
