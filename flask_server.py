@@ -42,9 +42,9 @@ def articles_query_one():
             cursor.execute(base_query_sql)
             results['data'] = cursor.fetchall()
             results['code'] = 0
-        print(results)
+        print("Success:  fetch data !")
     except Exception as e:
-        print("Error: unable to fetch data,For reason: s%", e)
+        print("Error: unable to fetch data,For reason: s%" %e)
 
     return json.dumps(results, cls=JsonCustomEncoder, ensure_ascii=False)
 
